@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudyHub</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">📚 Plataforma para estudantes</p>
+          <h1>StudyHub</h1>
+          <p class="hero-copy">
+            Organize sua rotina, acompanhe metas e mantenha o foco em cada estudo.
+          </p>
+        </div>
+        <div class="hero-card">
+          <h2>Resumo do dia</h2>
+          <p id="today-label"></p>
+          <div class="progress-block">
+            <span>Progresso semanal</span>
+            <div class="bar"><div id="weekly-progress" class="fill"></div></div>
+            <strong id="progress-text">0%</strong>
+          </div>
+        </div>
+      </header>
+
+      <main class="dashboard">
+        <section class="card agenda-card">
+          <div class="card-header">
+            <h3>🗓️ Agenda</h3>
+            <span>Planeje seu dia</span>
+          </div>
+          <form id="task-form" class="inline-form">
+            <input id="task-input" type="text" placeholder="Adicionar tarefa" required />
+            <button type="submit">+ Add</button>
+          </form>
+          <ul id="task-list" class="task-list"></ul>
+        </section>
+
+        <section class="card calendar-card">
+          <div class="card-header">
+            <h3>📅 Calendário</h3>
+            <div class="calendar-nav">
+              <button id="prev-month">◀</button>
+              <span id="month-label"></span>
+              <button id="next-month">▶</button>
+            </div>
+          </div>
+          <div class="weekdays">
+            <span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span>
+          </div>
+          <div id="calendar-grid" class="calendar-grid"></div>
+        </section>
+
+        <section class="card flashcards-card">
+          <div class="card-header">
+            <h3>🧠 Flashcards</h3>
+            <span>Revise rápido</span>
+          </div>
+          <div id="flashcard" class="flashcard">
+            <p id="flashcard-question"></p>
+            <button id="show-answer">Mostrar resposta</button>
+            <p id="flashcard-answer" class="hidden"></p>
+          </div>
+          <button id="next-card">Próximo cartão</button>
+        </section>
+
+        <section class="card pomodoro-card">
+          <div class="card-header">
+            <h3>⏱️ Pomodoro</h3>
+            <span>Foco intenso</span>
+          </div>
+          <div id="timer" class="timer">25:00</div>
+          <div class="timer-actions">
+            <button id="start-timer">Iniciar</button>
+            <button id="pause-timer">Pausar</button>
+            <button id="reset-timer">Resetar</button>
+          </div>
+          <p id="pomodoro-status">Sessão pronta para começar.</p>
+        </section>
+
+        <section class="card summaries-card">
+          <div class="card-header">
+            <h3>📝 Resumos</h3>
+            <span>Resumo ativo</span>
+          </div>
+          <ul class="summary-list">
+            <li>Revisar capítulos de biologia com foco em reprodução.</li>
+            <li>Organizar tópicos de matemática para prova de segunda-feira.</li>
+            <li>Escrever um resumo curto do texto de história.</li>
+          </ul>
+        </section>
+
+        <section class="card goals-card">
+          <div class="card-header">
+            <h3>🎯 Metas</h3>
+            <span>Acompanhe seus objetivos</span>
+          </div>
+          <form id="goal-form" class="inline-form">
+            <input id="goal-input" type="text" placeholder="Nova meta" required />
+            <button type="submit">+ Add</button>
+          </form>
+          <ul id="goal-list" class="goal-list"></ul>
+        </section>
+
+        <section class="card stats-card">
+          <div class="card-header">
+            <h3>📊 Estatísticas</h3>
+            <span>Seu desempenho</span>
+          </div>
+          <div class="stats-grid">
+            <div class="stat-box">
+              <strong id="stats-tasks">0</strong>
+              <span>Tarefas concluídas</span>
+            </div>
+            <div class="stat-box">
+              <strong id="stats-goals">0</strong>
+              <span>Metas concluídas</span>
+            </div>
+            <div class="stat-box">
+              <strong id="stats-sessions">0</strong>
+              <span>Sessões Pomodoro</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
